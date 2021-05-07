@@ -1,0 +1,7 @@
+admin
+
+backend/vendor
+
+backend/app.log
+
+backend/docker-compose.yaml
