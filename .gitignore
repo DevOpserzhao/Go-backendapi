@@ -1,13 +1,5 @@
-web
-
-backend/vendor
-
-backend/app.log
-
-backend/docker-compose.yaml
-
 .idea
-
 .DS_Store
-
-backend/.DS_Store
+app.log
+vendor
+docker-compose.yaml
