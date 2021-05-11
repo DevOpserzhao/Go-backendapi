@@ -3,3 +3,5 @@
 app.log
 vendor
 docker-compose.yaml
+
+resources/files
