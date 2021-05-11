@@ -15,3 +15,8 @@ type Login struct {
 type Token struct {
 	Token string `json:"token"`
 }
+
+type Captcha struct {
+	CaptchaID string `form:"captcha_id"`
+	Code      string `form:"code"`
+}

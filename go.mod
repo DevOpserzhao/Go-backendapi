@@ -4,6 +4,7 @@ go 1.15
 
 require (
 	github.com/Shopify/sarama v1.28.0
+	github.com/dchest/captcha v0.0.0-20200903113550-03f5f0333e1f
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/fsnotify/fsnotify v1.4.9
 	github.com/gin-gonic/gin v1.7.1
