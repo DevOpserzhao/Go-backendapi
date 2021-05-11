@@ -1,0 +1,41 @@
+version: "3.8"
+services:
+  admin:
+    container_name: docker_admin
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+      - "8082:8082"
+    depends_on:
+      - database
+      - redis
+
+  database:
+    image: mysql:5.7
+    volumes:
+      - /data/mysql:/var/lib/mysql
+    ports:
+      - "13306:3306"
+    environment:
+      TZ: Asia/Shanghai
+      LANG: en_US.UTF-8
+      MYSQL_DATABASE: test
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: 123456
+
+  redis:
+    image: redis:6.0-alpine
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+      - /etc/redis/redis.conf:/etc/redis/redis.conf
+    environment:
+      TZ: Asia/Shanghai
+      LANG: en_US.UTF-8
+    networks:
+      - app_net
+
