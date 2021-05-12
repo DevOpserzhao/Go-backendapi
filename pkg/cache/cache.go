@@ -45,6 +45,7 @@ func open(c *RedisConfig) *redis.Client {
 		log.Println("\033[1;31;31m=========== Redis ============\033[0m")
 		log.Println("\033[1;34;34m	  Please Check Redis\033[0m")
 		log.Println("\033[1;31;31m==============================\033[0m")
+		return nil
 	}
 	log.Println()
 	log.Printf("\033[1;32;32m Redis RUNING [%s] \033[0m", c.Addr)
