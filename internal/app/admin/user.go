@@ -73,7 +73,7 @@ func (uc *UserController) Logout(ctx *gin.Context) {
 func (uc *UserController) GenCaptcha(ctx *gin.Context) {
 	captchaID := captcha.New()
 	ginx.OK(ctx, struct {
-		CaptchaID string `form:"captcha_id"`
+		CaptchaID string `json:"captcha_id"`
 	}{
 		CaptchaID: captchaID,
 	})
