@@ -2,7 +2,7 @@ package tests
 
 import (
 	"backend/internal/logic"
-	mock_domain "backend/internal/mock"
+	mockDomain "backend/internal/mock"
 	"backend/internal/types"
 	"github.com/golang/mock/gomock"
 	"github.com/pkg/errors"
@@ -60,14 +60,14 @@ func TestUserRegisterLogic(t *testing.T) {
 		},
 	}
 	ctrl := gomock.NewController(t)
-	repo := mock_domain.NewMockUserRepositoryFace(ctrl)
+	repo := mockDomain.NewMockUserRepositoryFace(ctrl)
 
 	repo.EXPECT().CheckExistedAccountAndRegister(tests[0].Param).Return(nil)
 	repo.EXPECT().CheckExistedAccountAndRegister(tests[1].Param).Return(ExistedUserName)
 	repo.EXPECT().CheckExistedAccountAndRegister(tests[2].Param).Return(ExistedEmail)
 	repo.EXPECT().CheckExistedAccountAndRegister(tests[3].Param).Return(ErrMySQLQuery)
 
-	lg := logic.NewUserLogic(repo, nil)
+	lg := logic.NewUserLogic(repo, nil, nil, nil)
 
 	for _, tt := range tests {
 		t.Run(tt.Name, func(t *testing.T) {

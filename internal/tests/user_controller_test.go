@@ -65,7 +65,7 @@ func TestUserRegister(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.Name, func(t *testing.T) {
-			r := router.SetUpRouter(controller)
+			r := router.SetUpRouter(controller, nil)
 			w := httptest.NewRecorder()
 			bs, _ := json.Marshal(tt.Param)
 			reader := bytes.NewReader(bs)
@@ -170,7 +170,7 @@ func TestUserLogin(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.Name, func(t *testing.T) {
-			r := router.SetUpRouter(controller)
+			r := router.SetUpRouter(controller, nil)
 			w := httptest.NewRecorder()
 			bs, _ := json.Marshal(tt.Param)
 			reader := bytes.NewReader(bs)

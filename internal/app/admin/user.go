@@ -71,6 +71,7 @@ func (uc *UserController) Logout(ctx *gin.Context) {
 }
 
 func (uc *UserController) GenCaptcha(ctx *gin.Context) {
+	// TODO captcha Expiration and SetCustomStore
 	captchaID := captcha.New()
 	ginx.OK(ctx, struct {
 		CaptchaID string `json:"captcha_id"`

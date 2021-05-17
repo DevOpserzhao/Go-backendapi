@@ -5,6 +5,12 @@ import (
 	"net/http"
 )
 
+type Response struct {
+	Code int
+	Msg  string
+	Data interface{}
+}
+
 func OK(ctx *gin.Context, data interface{}) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"code": 0,
