@@ -21,8 +21,9 @@ run:
 
 live:
 	@echo 'Live Fresh command:'
-	cd cmd/admin && go build -gcflags="-m -l" -o=../../bin . && \
-	cd ../../bin  && ./admin -p=../config
+	cd cmd/admin && go build -gcflags="-m -l" -ldflags="-w -s" -o=../../bin . && \
+	cd ../../bin && rm -f admin_mac && upx -3 admin -o admin_mac && ls -lh  && \
+	./admin_mac -p=../config
 
 pprof:
 	@echo 'Pprof Web command:'

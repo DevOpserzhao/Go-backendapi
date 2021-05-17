@@ -12,7 +12,10 @@ require (
 	github.com/go-redis/redis/v8 v8.8.2
 	github.com/golang/mock v1.5.0
 	github.com/google/wire v0.5.0
+	github.com/howeyc/fsnotify v0.9.0 // indirect
 	github.com/joho/godotenv v1.3.0
+	github.com/pilu/config v0.0.0-20131214182432-3eb99e6c0b9a // indirect
+	github.com/pilu/fresh v0.0.0-20190826141211-0fa698148017 // indirect
 	github.com/pkg/errors v0.9.1
 	github.com/robfig/cron/v3 v3.0.0
 	github.com/satori/go.uuid v1.2.0

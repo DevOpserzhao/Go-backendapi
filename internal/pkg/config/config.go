@@ -26,6 +26,7 @@ func NewConfig() *Config {
 	var t string
 	var mode string
 	var watch bool
+	// Debug config = ./config
 	flag.StringVar(&path, "p", "./config", "配置文件目录")
 	flag.StringVar(&name, "n", "config", "配置文件名字")
 	flag.StringVar(&t, "t", "yaml", "配置文件类型")
